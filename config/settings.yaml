@@ -1,0 +1,99 @@
+# Content Writing Agentic AI System Configuration
+
+# Environment Settings
+environment: "development"
+debug: true
+log_level: "INFO"
+
+# MCP Server Configuration
+mcp:
+  server:
+    host: "localhost"
+    port: 8000
+    max_connections: 100
+  
+# Framework-specific Configuration
+frameworks:
+  crewai:
+    memory: true
+    verbose: true
+    embedder:
+      provider: "openai"
+      model: "text-embedding-3-small"
+    max_agents_per_crew: 10
+    
+  langgraph:
+    checkpointer: "memory"
+    interrupt_before: ["human_review"]
+    interrupt_after: ["quality_gate"]
+    max_workflow_steps: 50
+    
+  autogen:
+    cache_seed: 42
+    temperature: 0.7
+    max_tokens: 2000
+    max_round: 10
+    speaker_selection: "round_robin"
+
+# Tool Configuration
+tools:
+  rate_limiting:
+    per_minute: 60
+    burst: 10
+  
+  retry:
+    max_attempts: 3
+    initial_delay: 1.0
+    backoff_factor: 2.0
+    max_delay: 60.0
+  
+  content:
+    max_length: 50000
+    timeout: 30
+  
+  apis:
+    openai:
+      model: "gpt-4"
+      max_tokens: 4000
+      temperature: 0.7
+    
+    anthropic:
+      model: "claude-3-sonnet-20240229"
+      max_tokens: 4000
+      temperature: 0.7
+
+# Monitoring and Logging
+monitoring:
+  metrics:
+    enabled: true
+    port: 9090
+    path: "/metrics"
+  
+  health_checks:
+    enabled: true
+    interval: 30
+    timeout: 10
+  
+  tracing:
+    enabled: true
+    sample_rate: 1.0
+
+logging:
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file:
+    enabled: true
+    path: "logs/system.log"
+    max_size: "10MB"
+    backup_count: 5
+  
+  console:
+    enabled: true
+    level: "INFO"
+  
+  framework_specific:
+    crewai:
+      level: "DEBUG"
+    langgraph:
+      level: "INFO"
+    autogen:
+      level: "INFO"

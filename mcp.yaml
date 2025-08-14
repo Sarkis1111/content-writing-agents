@@ -1,0 +1,590 @@
+# MCP Configuration for Agentic Content Writing System
+# This file defines the complete multi-framework architecture using Model Context Protocol
+
+# Basic project metadata and versioning
+version: "1.0"                                    # MCP configuration schema version
+name: "agentic-content-writing-system"            # Unique identifier for this MCP system
+description: "Multi-framework agentic content writing system with CrewAI, LangGraph, and AutoGen integration"  # Human-readable description
+
+# Project-level configuration and metadata
+project:
+  name: "Agentic Content Writing AI"              # Display name for the project
+  description: "Advanced content creation system using specialized agentic frameworks"  # Detailed project description
+  version: "2.0.0"                               # Semantic versioning for the project
+  architecture: "multi-framework-agentic"        # Architecture type identifier for deployment systems
+
+# Sensitive configuration values stored as environment variables
+secrets:
+  # OpenAI API key for GPT models and embeddings
+  openai_api_key: "${OPENAI_API_KEY}"            # Primary LLM provider for most agents
+  
+  # Anthropic API key for Claude models as backup/alternative
+  anthropic_api_key: "${ANTHROPIC_API_KEY}"      # Secondary LLM provider for specific use cases
+  
+  # Reddit API credentials for social media research
+  reddit_client_id: "${REDDIT_CLIENT_ID}"        # Reddit app client ID for API access
+  reddit_client_secret: "${REDDIT_CLIENT_SECRET}" # Reddit app secret for authentication
+  
+  # News and search API keys for research capabilities
+  news_api_key: "${NEWS_API_KEY}"                # News API for current events research
+  serp_api_key: "${SERP_API_KEY}"                # Search engine results API for web research
+  
+  # Infrastructure secrets for coordination and monitoring
+  redis_url: "${REDIS_URL}"                      # Redis connection string for state management and caching
+  langsmith_api_key: "${LANGSMITH_API_KEY}"      # LangSmith for LLM observability and debugging
+
+# LLM model configurations for different use cases
+models:
+  # Primary model for most agent operations
+  primary:
+    provider: "openai"                            # Use OpenAI as the main provider
+    model: "gpt-4.1"                               # GPT-4 for high-quality reasoning and content generation
+    temperature: 0.7                             # Balanced creativity vs consistency (0-1 scale)
+    max_tokens: 4096                             # Maximum response length
+    timeout: 60                                  # Request timeout in seconds
+  
+  # Secondary model for backup or specialized tasks
+  secondary:
+    provider: "anthropic"                        # Anthropic's Claude as alternative
+    model: "claude-3-sonnet"                     # Claude Sonnet for analytical tasks
+    temperature: 0.6                             # Slightly more deterministic than primary
+    max_tokens: 4096                             # Same token limit as primary
+    timeout: 60                                  # Same timeout as primary
+
+# Agentic Framework Configuration - Core frameworks that power the multi-agent system
+frameworks:
+  # CrewAI configuration for team-based agent collaboration
+  crewai:
+    version: ">=0.28.0"                          # Minimum version requirement for compatibility
+    config:
+      memory: true                               # Enable persistent memory across tasks
+      verbose: true                              # Enable detailed logging for debugging
+      max_execution_time: 300                    # Maximum time (seconds) for crew execution
+      embedder:                                  # Configuration for semantic embeddings
+        provider: "openai"                       # Use OpenAI for text embeddings
+        config:
+          model: "text-embedding-3-small"        # Efficient embedding model for semantic search
+    features:                                    # CrewAI features to enable
+      - "hierarchical_process"                   # Enable manager-worker agent hierarchies
+      - "memory_system"                          # Persistent agent memory across sessions
+      - "tool_integration"                       # Native tool calling capabilities
+      - "async_execution"                        # Asynchronous task execution
+
+  # LangGraph configuration for complex workflow orchestration
+  langgraph:
+    version: ">=0.1.0"                          # Minimum version for state management features
+    config:
+      checkpointer: "redis"                      # Use Redis for workflow state persistence
+      interrupt_before: ["human_review", "quality_gate"]  # Pause workflow before these nodes
+      interrupt_after: ["final_approval"]        # Pause workflow after this node
+      max_iterations: 10                         # Maximum workflow loop iterations
+    features:                                    # LangGraph capabilities to enable
+      - "state_management"                       # Persistent state across workflow steps
+      - "conditional_logic"                      # If/then branching in workflows
+      - "graph_visualization"                    # Visual workflow diagrams
+      - "checkpoint_recovery"                    # Resume workflows from saved checkpoints
+
+  # AutoGen configuration for multi-agent conversations
+  autogen:
+    version: ">=0.2.0"                          # Minimum version for group chat features
+    config:
+      cache_seed: 42                             # Seed for reproducible caching behavior
+      temperature: 0.7                           # Creativity level for agent conversations
+      max_tokens: 2000                           # Token limit for individual agent responses
+      max_consecutive_auto_reply: 10             # Limit automated conversation rounds
+      human_input_mode: "NEVER"                  # Fully automated mode (no human intervention)
+    features:                                    # AutoGen features to enable
+      - "group_chat"                             # Multi-agent conversation management
+      - "code_execution"                         # Safe code execution capabilities
+      - "conversation_summary"                   # Automatic conversation summarization
+      - "agent_collaboration"                    # Cross-agent collaboration patterns
+
+# MCP Tools - Individual capabilities available to all frameworks through MCP protocol
+tools:
+  # Research tools for information gathering and analysis
+  research_tools:
+    # Web search capability for finding online information
+    web_search:
+      name: "web_search"                         # Tool identifier for agent calls
+      description: "Search the web for relevant information"  # Human-readable description
+      provider: "serp_api"                       # Backend service providing the capability
+      mcp_compatible: true                       # Confirms tool works with MCP protocol
+      framework_access: ["crewai", "langgraph", "autogen"]  # Which frameworks can use this tool
+      
+    # Content retrieval for extracting text from web pages
+    content_retrieval:
+      name: "retrieve_content"                   # Tool identifier
+      description: "Retrieve and extract content from URLs"  # What the tool does
+      provider: "web_scraper"                    # Web scraping service
+      mcp_compatible: true                       # MCP protocol compatibility
+      framework_access: ["crewai", "langgraph"] # Limited to frameworks that need full content
+      
+    # Trend analysis for identifying popular topics and patterns
+    trend_analysis:
+      name: "analyze_trends"                     # Tool identifier
+      description: "Identify trending topics and patterns"   # Tool purpose
+      provider: "google_trends"                  # Google Trends API integration
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["crewai", "autogen"]   # Used by research and strategy agents
+      
+    # News search for current events and recent developments
+    news_search:
+      name: "search_news"                        # Tool identifier
+      description: "Search for recent news articles"         # Tool function
+      provider: "news_api"                       # News API service
+      mcp_compatible: true                       # Works with MCP
+      framework_access: ["crewai", "langgraph"] # Used by research and content agents
+
+  # Analysis tools for processing and understanding content
+  analysis_tools:
+    # Content analysis for structure, quality, and insights
+    content_analyzer:
+      name: "analyze_content"                    # Tool identifier
+      description: "Analyze content structure and quality"   # Tool purpose
+      provider: "nlp_processor"                  # Natural language processing service
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["crewai", "langgraph", "autogen"]  # Available to all frameworks
+      
+    # Topic extraction for identifying main themes
+    topic_extractor:
+      name: "extract_topics"                     # Tool identifier
+      description: "Extract main topics and themes"          # What it extracts
+      provider: "topic_modeler"                  # Topic modeling service
+      mcp_compatible: true                       # MCP protocol support
+      framework_access: ["crewai", "autogen"]   # Used for research and strategy
+      
+    # Sentiment analysis for emotional tone assessment
+    sentiment_analyzer:
+      name: "analyze_sentiment"                  # Tool identifier
+      description: "Analyze emotional tone and sentiment"    # Analysis type
+      provider: "sentiment_api"                  # Sentiment analysis service
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["langgraph", "autogen"] # Used in content and strategy workflows
+
+  # Writing tools for content creation
+  writing_tools:
+    # Content generation using LLMs
+    content_generator:
+      name: "generate_content"                   # Tool identifier
+      description: "Generate written content"               # Tool function
+      provider: "llm_generator"                  # LLM-based content generation
+      mcp_compatible: true                       # MCP protocol support
+      framework_access: ["langgraph"]           # Only used in content creation workflows
+      
+    # Headline creation for compelling titles
+    headline_creator:
+      name: "create_headlines"                   # Tool identifier
+      description: "Generate compelling headlines"           # Specific content type
+      provider: "llm_generator"                  # LLM-based generation
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["langgraph", "crewai"] # Used in content and research workflows
+      
+    # Image generation for visual content
+    image_generator:
+      name: "generate_images"                    # Tool identifier
+      description: "Create visual content"                   # Visual content creation
+      provider: "dalle"                          # DALL-E image generation
+      mcp_compatible: true                       # MCP protocol support
+      framework_access: ["langgraph"]           # Only in content workflows
+
+  # Editing tools for content refinement and optimization
+  editing_tools:
+    # Grammar and style checking
+    grammar_checker:
+      name: "check_grammar"                      # Tool identifier
+      description: "Grammar and style checking"              # Quality assurance function
+      provider: "language_tool"                  # Grammar checking service
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["langgraph"]           # Only used in editing workflows
+      
+    # SEO optimization for search engine performance
+    seo_optimizer:
+      name: "optimize_seo"                       # Tool identifier
+      description: "SEO analysis and optimization"           # Search optimization
+      provider: "seo_analyzer"                   # SEO analysis service
+      mcp_compatible: true                       # MCP protocol support
+      framework_access: ["langgraph"]           # Used in editing workflows
+      
+    # Readability scoring for audience accessibility
+    readability_scorer:
+      name: "score_readability"                  # Tool identifier
+      description: "Calculate readability metrics"           # Accessibility measurement
+      provider: "readability_api"                # Readability analysis service
+      mcp_compatible: true                       # MCP compatible
+      framework_access: ["langgraph"]           # Used in quality assurance
+
+# Framework-Specific Agent Definitions - Detailed agent configurations for each framework
+agents:
+  # CrewAI agents organized into collaborative crews
+  crewai_agents:
+    # Research crew for comprehensive information gathering
+    research_crew:
+      name: "Research Crew"                      # Crew identifier
+      framework: "crewai"                        # Framework this crew uses
+      process_type: "hierarchical"               # Manager-worker organization structure
+      agents:                                    # Individual agents in this crew
+        # Specialized web research agent
+        - name: "Web Research Specialist"        # Agent name
+          role: "web_researcher"                 # Agent's role identifier
+          goal: "Gather comprehensive web information"        # Agent's primary objective
+          backstory: "Expert in finding and evaluating online sources"  # Agent's background context
+          tools: ["web_search", "content_retrieval"]         # Tools this agent can use
+          max_iter: 5                           # Maximum iterations for task completion
+          
+        # Trend analysis specialist agent
+        - name: "Trend Analysis Expert"          # Agent name
+          role: "trend_analyst"                  # Role identifier
+          goal: "Identify market trends and patterns"         # Primary objective
+          backstory: "Specialist in trend identification and analysis"  # Background context
+          tools: ["trend_analysis", "news_search"]           # Available tools
+          max_iter: 5                           # Maximum task iterations
+          
+        # Content curation specialist
+        - name: "Content Curator"               # Agent name
+          role: "content_curator"                # Role identifier
+          goal: "Curate and organize relevant content"        # Primary objective
+          backstory: "Expert in content organization and relevance assessment"  # Background
+          tools: ["content_analyzer", "topic_extractor"]     # Tools for curation
+          max_iter: 3                           # Fewer iterations for organization tasks
+          
+        # Fact-checking specialist
+        - name: "Fact Checker"                  # Agent name
+          role: "fact_checker"                   # Role identifier
+          goal: "Verify information accuracy and credibility" # Quality assurance objective
+          backstory: "Specialist in source verification and fact-checking"  # Expert background
+          tools: ["web_search", "content_analyzer"]          # Verification tools
+          max_iter: 3                           # Limited iterations for verification
+      
+      # Tasks that the research crew will execute
+      tasks:
+        # Primary research task
+        - description: "Research {topic} comprehensively using multiple sources"  # Task description with variable
+          agent: "web_researcher"               # Agent responsible for this task
+          expected_output: "Detailed research report with sources"  # Expected deliverable
+          
+        # Trend analysis task
+        - description: "Analyze trends related to {topic}"           # Task description
+          agent: "trend_analyst"                # Responsible agent
+          expected_output: "Trend analysis with supporting data"     # Expected output
+          
+        # Content organization task
+        - description: "Curate and organize research findings"       # Task description
+          agent: "content_curator"              # Responsible agent
+          expected_output: "Organized content collection"            # Expected deliverable
+          
+        # Verification task
+        - description: "Verify key facts and claims"                # Quality assurance task
+          agent: "fact_checker"                 # Responsible agent
+          expected_output: "Fact-checked research validation"       # Expected output
+
+    # Meta-coordination crew for cross-framework management
+    meta_coordination_crew:
+      name: "Meta Coordination Crew"            # Crew identifier
+      framework: "crewai"                       # Framework designation
+      process_type: "sequential"                # Sequential rather than hierarchical process
+      agents:                                   # Coordination agents
+        # Workflow coordination agent
+        - name: "Workflow Coordinator"          # Agent name
+          role: "coordinator"                   # Role identifier
+          goal: "Manage cross-framework workflows"            # Cross-system coordination
+          backstory: "Expert in multi-system coordination"   # Background context
+          tools: ["content_analyzer"]           # Tools for coordination
+          
+        # Quality control agent
+        - name: "Quality Controller"            # Agent name
+          role: "quality_controller"             # Role identifier
+          goal: "Ensure cross-agent quality standards"        # Quality assurance across agents
+          backstory: "Quality assurance specialist"           # Expert background
+          tools: ["content_analyzer", "sentiment_analyzer"]  # Quality assessment tools
+
+  # LangGraph agents with state-based workflows
+  langgraph_agents:
+    # Content writer with complex iterative workflow
+    content_writer:
+      name: "Content Writer Workflow"           # Workflow identifier
+      framework: "langgraph"                    # Framework designation
+      state_schema:                             # State variables maintained throughout workflow
+        topic: "string"                         # Input topic for content creation
+        research_data: "object"                 # Research data from previous agents
+        strategy: "object"                      # Strategy guidance from strategy agents
+        outline: "string"                       # Content outline/structure
+        content: "string"                       # Generated content
+        revisions: "array"                      # List of revision iterations
+        quality_score: "float"                  # Numerical quality assessment
+        approval_status: "string"               # Current approval state
+      
+      # Workflow nodes - individual processing steps
+      nodes:
+        # Research analysis node
+        - name: "analyze_research"              # Node identifier
+          function: "analyze_research_data"     # Function to execute
+          tools: ["content_analyzer", "topic_extractor"]     # Tools available to this node
+          
+        # Outline creation node
+        - name: "create_outline"               # Node identifier
+          function: "generate_content_outline" # Function to execute
+          tools: ["content_analyzer"]          # Tools for outline generation
+          
+        # Content writing node
+        - name: "write_content"                # Node identifier
+          function: "generate_content"         # Content generation function
+          tools: ["content_generator", "headline_creator"]   # Writing tools
+          
+        # Self-review node
+        - name: "self_review"                  # Node identifier
+          function: "review_content_quality"   # Quality assessment function
+          tools: ["content_analyzer", "sentiment_analyzer"] # Review tools
+          
+        # Human review escalation node
+        - name: "human_review"                 # Node identifier
+          function: "escalate_to_human"        # Human escalation function
+          interrupt: true                      # Pauses workflow for human input
+          
+      # Workflow edges - connections between nodes
+      edges:
+        # Linear progression from analysis to outline
+        - from: "analyze_research"             # Source node
+          to: "create_outline"                 # Destination node
+          
+        # Outline to content generation
+        - from: "create_outline"               # Source node
+          to: "write_content"                  # Destination node
+          
+        # Content to review
+        - from: "write_content"                # Source node
+          to: "self_review"                    # Destination node
+          
+        # Conditional edge for revision loop
+        - from: "self_review"                  # Source node
+          to: "write_content"                  # Back to writing for revisions
+          condition: "should_revise"           # Condition function determines routing
+          
+        # Conditional edge for human escalation
+        - from: "self_review"                  # Source node
+          to: "human_review"                   # Escalation destination
+          condition: "needs_human_review"      # Condition for human intervention
+
+    # Content editor with multi-stage quality assurance
+    content_editor:
+      name: "Content Editor Workflow"           # Workflow identifier
+      framework: "langgraph"                    # Framework designation
+      state_schema:                             # State variables for editing workflow
+        content: "string"                       # Input content to edit
+        editing_requirements: "object"          # Editing specifications and requirements
+        grammar_score: "float"                  # Grammar quality score
+        seo_score: "float"                      # SEO optimization score
+        readability_score: "float"              # Readability assessment score
+        final_content: "string"                 # Final edited content
+        quality_report: "object"                # Comprehensive quality report
+      
+      # Editing workflow nodes
+      nodes:
+        # Grammar and style checking
+        - name: "grammar_check"                # Node identifier
+          function: "check_grammar_and_style"  # Grammar checking function
+          tools: ["grammar_checker"]           # Grammar checking tools
+          
+        # SEO optimization
+        - name: "seo_optimization"             # Node identifier
+          function: "optimize_for_seo"         # SEO optimization function
+          tools: ["seo_optimizer"]             # SEO analysis tools
+          
+        # Readability assessment
+        - name: "readability_check"            # Node identifier
+          function: "assess_readability"       # Readability scoring function
+          tools: ["readability_scorer"]        # Readability tools
+          
+        # Final quality review
+        - name: "final_review"                 # Node identifier
+          function: "conduct_final_review"     # Comprehensive review function
+          tools: ["content_analyzer", "sentiment_analyzer"]  # Final review tools
+          
+        # Quality gate checkpoint
+        - name: "quality_gate"                 # Node identifier
+          function: "quality_gate_check"       # Quality threshold checking
+          interrupt: true                      # Pause for quality approval
+
+  # AutoGen agents for collaborative conversations
+  autogen_agents:
+    # Strategy council for collaborative planning
+    strategy_council:
+      name: "Strategy Council"                  # Group chat identifier
+      framework: "autogen"                      # Framework designation
+      chat_type: "group_chat"                   # Type of multi-agent interaction
+      max_round: 15                            # Maximum conversation rounds
+      speaker_selection: "round_robin"          # How agents take turns speaking
+      
+      # Individual agents in the strategy council
+      agents:
+        # Overall content strategy expert
+        - name: "Content Strategist"            # Agent name
+          role: "strategist"                    # Role identifier
+          system_message: "You are a content strategy expert focused on overall content direction and alignment with business goals."  # Agent's system prompt
+          tools: ["content_analyzer", "trend_analysis"]      # Tools available to this agent
+          
+        # Audience analysis specialist
+        - name: "Audience Analyst"             # Agent name
+          role: "analyst"                       # Role identifier
+          system_message: "You specialize in audience analysis and targeting, ensuring content resonates with intended audiences."  # System prompt
+          tools: ["sentiment_analyzer", "content_analyzer"]  # Analysis tools
+          
+        # Competitive landscape expert
+        - name: "Competitive Analyst"          # Agent name
+          role: "competitive_analyst"           # Role identifier
+          system_message: "You analyze competitive landscape and positioning opportunities for content."  # System prompt
+          tools: ["web_search", "content_analyzer"]          # Research and analysis tools
+          
+        # Performance optimization specialist
+        - name: "Performance Optimizer"        # Agent name
+          role: "optimizer"                     # Role identifier
+          system_message: "You focus on content performance optimization and measurable improvement recommendations."  # System prompt
+          tools: ["seo_optimizer", "content_analyzer"]       # Optimization tools
+
+# Multi-Framework Workflows - Complex workflows that span multiple frameworks
+workflows:
+  # Comprehensive content creation using all frameworks
+  comprehensive_content_creation:
+    name: "Comprehensive Content Creation Pipeline"          # Workflow identifier
+    description: "Full multi-framework content creation process"  # Workflow description
+    frameworks_used: ["crewai", "autogen", "langgraph"]    # Frameworks involved in this workflow
+    
+    # Sequential steps across different frameworks
+    steps:
+      # Step 1: Research using CrewAI
+      - framework: "crewai"                     # Framework for this step
+        agent: "research_crew"                  # Specific agent/crew to use
+        action: "comprehensive_research"        # Action to perform
+        inputs: ["topic", "requirements"]       # Required inputs for this step
+        outputs: ["research_data", "trend_insights", "competitive_analysis"]  # Expected outputs
+        timeout: 600                           # Maximum execution time in seconds
+        
+      # Step 2: Strategy development using AutoGen
+      - framework: "autogen"                    # Framework for this step
+        agent: "strategy_council"               # Agent group to use
+        action: "develop_strategy"              # Action to perform
+        inputs: ["research_data", "business_objectives"]       # Required inputs
+        outputs: ["content_strategy", "messaging_framework", "targeting_approach"]  # Expected outputs
+        timeout: 400                           # Maximum execution time
+        
+      # Step 3: Content creation using LangGraph
+      - framework: "langgraph"                  # Framework for this step
+        agent: "content_writer"                 # Workflow to execute
+        action: "create_content"                # Action to perform
+        inputs: ["content_strategy", "research_data"]          # Required inputs
+        outputs: ["draft_content", "content_outline", "supporting_materials"]  # Expected outputs
+        timeout: 500                           # Maximum execution time
+        
+      # Step 4: Editing and optimization using LangGraph
+      - framework: "langgraph"                  # Framework for this step
+        agent: "content_editor"                 # Workflow to execute
+        action: "edit_and_optimize"             # Action to perform
+        inputs: ["draft_content", "content_strategy"]          # Required inputs
+        outputs: ["final_content", "quality_report", "optimization_recommendations"]  # Expected outputs
+        timeout: 300                           # Maximum execution time
+
+  # Rapid content generation for urgent needs
+  rapid_content_generation:
+    name: "Rapid Content Generation"            # Workflow identifier
+    description: "Fast-track content creation for urgent needs"  # Workflow description
+    frameworks_used: ["crewai", "langgraph"]   # Frameworks used (fewer for speed)
+    
+    # Streamlined steps for speed
+    steps:
+      # Quick research step
+      - framework: "crewai"                     # Research framework
+        agent: "research_crew"                  # Research crew
+        action: "quick_research"                # Fast research action
+        inputs: ["topic", "urgency_level"]      # Inputs including urgency
+        outputs: ["key_insights", "essential_facts"]           # Minimal but essential outputs
+        timeout: 300                           # Shorter timeout for speed
+        parallel_execution: true                # Enable parallel processing where possible
+        
+      # Rapid content creation
+      - framework: "langgraph"                  # Content framework
+        agent: "content_writer"                 # Content workflow
+        action: "rapid_content_creation"        # Fast writing action
+        inputs: ["key_insights", "content_type"] # Minimal inputs
+        outputs: ["content_draft"]              # Single output
+        timeout: 200                           # Short timeout
+        
+      # Essential review only
+      - framework: "langgraph"                  # Editing framework
+        agent: "content_editor"                 # Editor workflow
+        action: "essential_review"              # Basic review only
+        inputs: ["content_draft"]               # Single input
+        outputs: ["final_content", "basic_quality_report"]     # Minimal outputs
+        timeout: 150                           # Fastest timeout
+
+# System Configuration - Infrastructure and operational settings
+system:
+  # MCP server configuration
+  mcp_server:
+    host: "0.0.0.0"                            # Listen on all network interfaces
+    port: 8000                                 # Port for MCP server
+    max_connections: 100                       # Maximum concurrent connections
+    timeout: 30                               # Connection timeout in seconds
+    
+  # Framework orchestration settings
+  framework_orchestration:
+    message_broker: "redis"                    # Use Redis for inter-framework messaging
+    state_storage: "redis"                     # Use Redis for workflow state persistence
+    coordination_timeout: 60                   # Timeout for cross-framework coordination
+    max_parallel_agents: 5                     # Maximum agents running simultaneously
+    
+  # Monitoring and observability configuration
+  monitoring:
+    metrics_enabled: true                      # Enable performance metrics collection
+    logging_level: "INFO"                      # Logging verbosity level
+    performance_tracking: true                 # Track performance metrics
+    framework_metrics: true                    # Collect framework-specific metrics
+    
+    # Available monitoring dashboards
+    dashboards:
+      - "framework_performance"                # Framework-level performance metrics
+      - "agent_collaboration"                  # Agent interaction metrics
+      - "workflow_execution"                   # Workflow completion and timing
+      - "quality_metrics"                      # Content quality measurements
+      
+  # Rate limiting to prevent API abuse
+  rate_limiting:
+    global_requests_per_minute: 1000           # Overall system request limit
+    per_framework_limits:                      # Framework-specific limits
+      crewai: 300                             # CrewAI requests per minute
+      langgraph: 400                          # LangGraph requests per minute
+      autogen: 200                            # AutoGen requests per minute
+    tool_specific_limits:                      # Tool-specific API limits
+      openai_api: 60                          # OpenAI API calls per minute
+      web_search: 100                         # Web search requests per minute
+      
+  # Caching configuration for performance
+  caching:
+    enabled: true                              # Enable caching system
+    backend: "redis"                           # Use Redis as cache backend
+    default_ttl: 3600                          # Default cache expiration (1 hour)
+    research_cache_ttl: 7200                   # Research data cache (2 hours)
+    content_cache_ttl: 1800                    # Content cache (30 minutes)
+
+# Environment Configurations - Settings for different deployment environments
+environments:
+  # Development environment settings
+  development:
+    debug: true                                # Enable debug logging and features
+    mock_external_apis: true                   # Use mock APIs instead of real ones
+    framework_verbose: true                    # Enable verbose framework logging
+    checkpoint_frequency: "high"               # Frequent checkpointing for debugging
+    
+  # Staging environment settings
+  staging:
+    debug: false                               # Disable debug mode
+    mock_external_apis: false                  # Use real APIs
+    performance_monitoring: true               # Enable performance monitoring
+    load_testing: true                         # Enable load testing capabilities
+    
+  # Production environment settings
+  production:
+    debug: false                               # No debug mode
+    enable_caching: true                       # Full caching enabled
+    monitoring_enabled: true                   # Comprehensive monitoring
+    auto_scaling: true                         # Enable automatic scaling
+    backup_enabled: true                       # Enable data backups
+    security_hardened: true                    # Enhanced security settings

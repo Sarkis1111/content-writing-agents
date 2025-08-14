@@ -1,0 +1,42 @@
+# Development Environment Overrides
+
+environment: "development"
+debug: true
+log_level: "DEBUG"
+
+mcp:
+  server:
+    host: "localhost"
+    port: 8000
+
+frameworks:
+  crewai:
+    verbose: true
+  
+  langgraph:
+    checkpointer: "memory"
+  
+  autogen:
+    temperature: 0.8
+
+tools:
+  retry:
+    max_attempts: 2
+  
+  apis:
+    openai:
+      temperature: 0.8
+    anthropic:
+      temperature: 0.8
+
+logging:
+  console:
+    level: "DEBUG"
+  
+  framework_specific:
+    crewai:
+      level: "DEBUG"
+    langgraph:
+      level: "DEBUG"
+    autogen:
+      level: "DEBUG"
