@@ -300,3 +300,7 @@ class ConcurrencyError(AgenticSystemError):
 class MCPServerError(AgenticSystemError):
     """MCP server-specific errors."""
     pass
+
+
+# Aliases for backward compatibility with tools
+ToolExecutionError = ToolError
