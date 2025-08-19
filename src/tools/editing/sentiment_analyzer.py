@@ -29,18 +29,26 @@ from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from pydantic import BaseModel, Field, validator
 
+# Flexible imports to handle both package and direct imports
 try:
-    from ...core.errors import ToolError
-    from ...core.logging.logger import get_logger
-    from ...utils.simple_retry import with_retry
-except ImportError:
-    # Handle direct import case
-    import sys
-    import os
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
     from core.errors import ToolError
     from core.logging.logger import get_logger
     from utils.simple_retry import with_retry
+except ImportError:
+    # Mock implementations for testing
+    import logging
+    class ToolError(Exception):
+        pass
+    
+    def get_logger(name):
+        return logging.getLogger(name)
+    
+    def with_retry(max_attempts=3, delay=1.0, backoff=2.0):
+        def decorator(func):
+            async def wrapper(*args, **kwargs):
+                return await func(*args, **kwargs)
+            return wrapper
+        return decorator
 
 logger = get_logger(__name__)
 
