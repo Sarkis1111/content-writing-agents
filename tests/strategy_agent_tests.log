@@ -1,0 +1,55 @@
+2025-08-19 15:59:28,226 - __main__ - INFO - ======================================================================
+2025-08-19 15:59:28,226 - __main__ - INFO - STRATEGY AGENT PHASE 3.3 - COMPREHENSIVE TESTING SUITE
+2025-08-19 15:59:28,226 - __main__ - INFO - ======================================================================
+2025-08-19 15:59:28,226 - __main__ - INFO - 
+Running test_imports...
+2025-08-19 15:59:30,167 - __main__ - INFO - Test test_imports: FAIL (1.94s) - Import failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,167 - __main__ - INFO - 
+Running test_data_models...
+2025-08-19 15:59:30,167 - __main__ - INFO - Test test_data_models: FAIL (0.00s) - Data models test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,167 - __main__ - INFO - 
+Running test_strategy_agent_creation...
+2025-08-19 15:59:30,168 - __main__ - INFO - Test test_strategy_agent_creation: FAIL (0.00s) - Agent creation failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,168 - __main__ - INFO - 
+Running test_autogen_framework_integration...
+2025-08-19 15:59:30,168 - __main__ - INFO - Test test_autogen_framework_integration: FAIL (0.00s) - AutoGen integration test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,168 - __main__ - INFO - 
+Running test_tool_integration...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_tool_integration: FAIL (0.08s) - Tool integration test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Running test_strategy_workflow_patterns...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_strategy_workflow_patterns: PASS (0.00s) - Workflow patterns validation successful
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Running test_strategy_request_response_cycle...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_strategy_request_response_cycle: FAIL (0.00s) - Request-response cycle test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Running test_session_management...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_session_management: FAIL (0.00s) - Session management test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Running test_agent_specializations...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_agent_specializations: PASS (0.00s) - Agent specialization structures validated
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Running test_error_handling...
+2025-08-19 15:59:30,251 - __main__ - INFO - Test test_error_handling: FAIL (0.00s) - Error handling test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO - ======================================================================
+2025-08-19 15:59:30,251 - __main__ - INFO - STRATEGY AGENT TESTING RESULTS
+2025-08-19 15:59:30,251 - __main__ - INFO - ======================================================================
+2025-08-19 15:59:30,251 - __main__ - INFO - Tests Passed: 2/10 (20.0%)
+2025-08-19 15:59:30,251 - __main__ - INFO - Total Testing Time: 2.03 seconds
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+Detailed Test Results:
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_imports: FAIL (1.94s) - Import failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_data_models: FAIL (0.00s) - Data models test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_strategy_agent_creation: FAIL (0.00s) - Agent creation failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_autogen_framework_integration: FAIL (0.00s) - AutoGen integration test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_tool_integration: FAIL (0.08s) - Tool integration test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_strategy_workflow_patterns: PASS (0.00s) - Workflow patterns validation successful
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_strategy_request_response_cycle: FAIL (0.00s) - Request-response cycle test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_session_management: FAIL (0.00s) - Session management test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_agent_specializations: PASS (0.00s) - Agent specialization structures validated
+2025-08-19 15:59:30,251 - __main__ - INFO -   test_error_handling: FAIL (0.00s) - Error handling test failed: attempted relative import beyond top-level package
+2025-08-19 15:59:30,251 - __main__ - INFO - 
+❌ STRATEGY AGENT IMPLEMENTATION: CRITICAL ISSUES
+2025-08-19 15:59:30,251 - __main__ - INFO - Phase 3.3 Strategy Agent needs significant work before deployment.
+2025-08-19 15:59:30,252 - __main__ - INFO - 
+======================================================================
