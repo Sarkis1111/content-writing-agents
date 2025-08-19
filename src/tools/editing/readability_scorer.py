@@ -24,15 +24,16 @@ from collections import Counter, defaultdict
 import string
 
 import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize, syllable_tokenize
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize.sonority_sequencing import SyllableTokenizer
 from nltk.corpus import stopwords, words
 from nltk.tag import pos_tag
 import textstat
 from pydantic import BaseModel, Field, validator
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -1038,7 +1039,7 @@ class ReadabilityScorer:
             
         except Exception as e:
             logger.error(f"Readability analysis failed: {str(e)}")
-            raise ToolExecutionError(f"Readability analysis failed: {str(e)}")
+            raise ToolError(f"Readability analysis failed: {str(e)}")
 
 
 # Initialize tool instance

@@ -177,3 +177,14 @@ def get_tool_logger(tool_name: str) -> logging.Logger:
 def get_agent_logger(agent_name: str) -> logging.Logger:
     """Get an agent-specific logger."""
     return get_logging_manager().get_agent_logger(agent_name)
+
+
+def get_logger(name: str) -> logging.Logger:
+    """Get a logger by name."""
+    return logging.getLogger(name)
+
+
+def setup_logging(config_dir: Optional[str] = None) -> LoggingManager:
+    """Set up logging configuration."""
+    manager = get_logging_manager(config_dir)
+    return manager

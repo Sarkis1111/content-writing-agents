@@ -26,9 +26,9 @@ import openai
 from pydantic import BaseModel, Field, validator
 from openai import AsyncOpenAI
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -118,7 +118,7 @@ class ContentRequest(BaseModel):
         description="Additional context data (research, facts, etc.)"
     )
     
-    model: GPTModel = Field(default=GPT_4O, description="GPT model to use")
+    model: GPTModel = Field(default=GPTModel.GPT_4O, description="GPT model to use")
     temperature: float = Field(default=0.7, description="Creativity level", ge=0.0, le=2.0)
     
     include_outline: bool = Field(default=False, description="Include content outline")
@@ -436,7 +436,7 @@ Formatting Requirements:
             
         except Exception as e:
             logger.error(f"GPT generation failed: {str(e)}")
-            raise ToolExecutionError(f"Content generation failed: {str(e)}")
+            raise ToolError(f"Content generation failed: {str(e)}")
 
     def _extract_title_and_content(self, raw_content: str) -> tuple[str, str]:
         """Extract title and main content from generated text"""
@@ -585,7 +585,7 @@ Formatting Requirements:
             
         except Exception as e:
             logger.error(f"Content generation failed: {str(e)}")
-            raise ToolExecutionError(f"Content generation failed: {str(e)}")
+            raise ToolError(f"Content generation failed: {str(e)}")
 
     async def generate_multiple_variants(
         self, 
@@ -635,7 +635,7 @@ Formatting Requirements:
             
         except Exception as e:
             logger.error(f"Multiple variant generation failed: {str(e)}")
-            raise ToolExecutionError(f"Variant generation failed: {str(e)}")
+            raise ToolError(f"Variant generation failed: {str(e)}")
 
     async def optimize_for_seo(self, content: str, keywords: List[str]) -> str:
         """
@@ -682,7 +682,7 @@ Provide the optimized version:"""
             
         except Exception as e:
             logger.error(f"SEO optimization failed: {str(e)}")
-            raise ToolExecutionError(f"SEO optimization failed: {str(e)}")
+            raise ToolError(f"SEO optimization failed: {str(e)}")
 
 
 # Initialize tool instance

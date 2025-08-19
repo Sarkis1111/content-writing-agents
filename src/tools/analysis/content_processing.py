@@ -18,13 +18,13 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-from langdetect import detect, detect_langs, LangDetectError
+from langdetect import detect, detect_langs, LangDetectException
 from textblob import TextBlob
 from pydantic import BaseModel, Field
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -179,7 +179,7 @@ class ContentProcessingTool:
             
             return lang_info
             
-        except LangDetectError:
+        except LangDetectException:
             # Fallback for very short or problematic text
             return LanguageInfo(
                 language='unknown',

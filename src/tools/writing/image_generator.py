@@ -30,9 +30,9 @@ from PIL import Image, ImageEnhance, ImageFilter
 from pydantic import BaseModel, Field, validator
 from openai import AsyncOpenAI
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -430,7 +430,7 @@ class ImageGenerator:
             
         except Exception as e:
             logger.error(f"DALL-E generation failed: {str(e)}")
-            raise ToolExecutionError(f"Image generation failed: {str(e)}")
+            raise ToolError(f"Image generation failed: {str(e)}")
 
     async def _download_image(self, url: str, filename: str) -> str:
         """Download image from URL to local storage"""
@@ -607,7 +607,7 @@ class ImageGenerator:
             
         except Exception as e:
             logger.error(f"Image generation failed: {str(e)}")
-            raise ToolExecutionError(f"Image generation failed: {str(e)}")
+            raise ToolError(f"Image generation failed: {str(e)}")
 
     def _generate_optimization_suggestions(
         self, 
@@ -684,7 +684,7 @@ class ImageGenerator:
                 
         except Exception as e:
             logger.error(f"Image optimization failed: {str(e)}")
-            raise ToolExecutionError(f"Image optimization failed: {str(e)}")
+            raise ToolError(f"Image optimization failed: {str(e)}")
 
 
 # Initialize tool instance

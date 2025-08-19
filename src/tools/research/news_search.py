@@ -19,8 +19,8 @@ from newsapi import NewsApiClient
 from pydantic import BaseModel, Field, HttpUrl
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError, APIError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError, APIError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -397,7 +397,7 @@ class NewsSearchTool:
             
         except Exception as e:
             logger.error(f"News search failed: {e}")
-            raise ToolExecutionError(f"News search failed: {e}")
+            raise ToolError(f"News search failed: {e}")
     
     async def get_headlines(
         self,
@@ -449,7 +449,7 @@ class NewsSearchTool:
             
         except Exception as e:
             logger.error(f"Headlines retrieval failed: {e}")
-            raise ToolExecutionError(f"Headlines retrieval failed: {e}")
+            raise ToolError(f"Headlines retrieval failed: {e}")
     
     async def monitor_keywords(
         self,
@@ -503,7 +503,7 @@ class NewsSearchTool:
             List of available news sources
         """
         if not self.news_api:
-            raise ToolExecutionError("News API not configured")
+            raise ToolError("News API not configured")
         
         try:
             params = {"language": language}
@@ -541,7 +541,7 @@ class NewsSearchTool:
             
         except Exception as e:
             logger.error(f"Failed to get sources: {e}")
-            raise ToolExecutionError(f"Failed to get sources: {e}")
+            raise ToolError(f"Failed to get sources: {e}")
     
     def clear_cache(self):
         """Clear the news cache."""

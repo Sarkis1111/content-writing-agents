@@ -18,8 +18,8 @@ import pandas as pd
 from pydantic import BaseModel, Field
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError, APIError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError, APIError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -119,7 +119,7 @@ class TrendFinderTool:
     async def _get_interest_over_time(self, query: TrendQuery) -> pd.DataFrame:
         """Get interest over time data from Google Trends."""
         if not self.trends_client:
-            raise ToolExecutionError("Google Trends client not initialized")
+            raise ToolError("Google Trends client not initialized")
         
         try:
             # Build payload for Google Trends
@@ -343,7 +343,7 @@ class TrendFinderTool:
         
         # Validate keyword count
         if len(query.keywords) > 5:
-            raise ToolExecutionError("Maximum 5 keywords allowed for trend analysis")
+            raise ToolError("Maximum 5 keywords allowed for trend analysis")
         
         try:
             # Check cache
@@ -441,12 +441,12 @@ class TrendFinderTool:
             
         except Exception as e:
             logger.error(f"Trend analysis failed: {e}")
-            raise ToolExecutionError(f"Trend analysis failed: {e}")
+            raise ToolError(f"Trend analysis failed: {e}")
     
     async def get_trending_searches(self, country: str = "united_states") -> List[str]:
         """Get current trending searches for a country."""
         if not self.trends_client:
-            raise ToolExecutionError("Google Trends client not initialized")
+            raise ToolError("Google Trends client not initialized")
         
         try:
             # Get trending searches
@@ -460,7 +460,7 @@ class TrendFinderTool:
             
         except Exception as e:
             logger.error(f"Failed to get trending searches: {e}")
-            raise ToolExecutionError(f"Failed to get trending searches: {e}")
+            raise ToolError(f"Failed to get trending searches: {e}")
     
     async def compare_keywords(self, keywords: List[str], timeframe: str = "today 3-m") -> Dict[str, float]:
         """
@@ -474,7 +474,7 @@ class TrendFinderTool:
             Dictionary mapping keywords to average interest scores
         """
         if len(keywords) > 5:
-            raise ToolExecutionError("Maximum 5 keywords allowed for comparison")
+            raise ToolError("Maximum 5 keywords allowed for comparison")
         
         query = TrendQuery(keywords=keywords, timeframe=timeframe)
         interest_df = await self._get_interest_over_time(query)

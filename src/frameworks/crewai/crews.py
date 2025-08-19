@@ -127,7 +127,7 @@ class CrewTemplateRegistry:
                     context=["research_report", "organized_content"]
                 )
             ],
-            process=ProcessType.HIERARCHICAL,
+            process=ProcessType.SEQUENTIAL,
             memory=True,
             max_execution_time=600
         )

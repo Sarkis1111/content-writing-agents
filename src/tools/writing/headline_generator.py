@@ -26,9 +26,9 @@ import random
 from pydantic import BaseModel, Field, validator
 from openai import AsyncOpenAI
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -570,7 +570,7 @@ Format as a simple numbered list, one headline per line."""
             
         except Exception as e:
             logger.error(f"GPT headline generation failed: {str(e)}")
-            raise ToolExecutionError(f"Headline generation failed: {str(e)}")
+            raise ToolError(f"Headline generation failed: {str(e)}")
 
     def _optimize_for_platform(self, headline: str, platform: Platform) -> str:
         """Optimize headline for specific platform requirements"""
@@ -686,7 +686,7 @@ Format as a simple numbered list, one headline per line."""
             
         except Exception as e:
             logger.error(f"Headline generation failed: {str(e)}")
-            raise ToolExecutionError(f"Headline generation failed: {str(e)}")
+            raise ToolError(f"Headline generation failed: {str(e)}")
 
     def _generate_ab_recommendations(
         self, 

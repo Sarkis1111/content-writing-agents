@@ -20,8 +20,8 @@ import requests
 from pydantic import BaseModel, Field, HttpUrl
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError, APIError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError, APIError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -137,10 +137,10 @@ class ContentRetrievalTool:
                     return content, content_type, response_headers
                     
         except asyncio.TimeoutError:
-            raise ToolExecutionError(f"Timeout while fetching content from {url}")
+            raise ToolError(f"Timeout while fetching content from {url}")
         except Exception as e:
             logger.error(f"Failed to fetch content from {url}: {e}")
-            raise ToolExecutionError(f"Failed to fetch content: {e}")
+            raise ToolError(f"Failed to fetch content: {e}")
     
     def _extract_html_content(self, content: bytes, url: str, **kwargs) -> ExtractedContent:
         """Extract content from HTML."""
@@ -193,7 +193,7 @@ class ContentRetrievalTool:
             
         except Exception as e:
             logger.error(f"HTML content extraction failed for {url}: {e}")
-            raise ToolExecutionError(f"HTML extraction failed: {e}")
+            raise ToolError(f"HTML extraction failed: {e}")
     
     def _extract_pdf_content(self, content: bytes, url: str, **kwargs) -> ExtractedContent:
         """Extract content from PDF (placeholder for future implementation)."""
@@ -226,7 +226,7 @@ class ContentRetrievalTool:
             
         except Exception as e:
             logger.error(f"Text content extraction failed for {url}: {e}")
-            raise ToolExecutionError(f"Text extraction failed: {e}")
+            raise ToolError(f"Text extraction failed: {e}")
     
     def _extract_title(self, soup: BeautifulSoup) -> str:
         """Extract page title."""

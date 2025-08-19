@@ -1,2 +1,405 @@
 2025-08-14 14:12:19,091 - frameworks.crewai - INFO - [crewai] Test message
 2025-08-14 14:12:29,518 - frameworks.crewai - INFO - [crewai] Test log message
+2025-08-19 13:33:59,686 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:33:59,686 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:33:59,687 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:34:32,694 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:34:32,695 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:37:25,992 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:37:26,101 - src.tools.research.web_search - WARNING - SERPAPI_KEY not found. SerpAPI search will be unavailable.
+2025-08-19 13:37:26,101 - src.tools.research.web_search - WARNING - Google Custom Search credentials not found. Google search will be unavailable.
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:43:07,445 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:43:07,446 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:43:07,446 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:43:07,446 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:43:07,446 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_quick_95777 with 1 tasks, strategy: sequential, estimated time: 45s
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_standard_95777 with 3 tasks, strategy: hybrid, estimated time: 104s
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_comprehensive_95777 with 5 tasks, strategy: hybrid, estimated time: 166s
+2025-08-19 13:43:07,446 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:43:22,318 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:43:22,320 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:43:22,320 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_workflow_001 with 5 tasks, strategy: hybrid, estimated time: 166s
+2025-08-19 13:43:22,322 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:43:22,322 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: collab_test_quick with 1 tasks, strategy: sequential, estimated time: 45s
+2025-08-19 13:43:22,322 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: collab_test_standard with 3 tasks, strategy: hybrid, estimated time: 104s
+2025-08-19 13:43:22,322 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: collab_test_comprehensive with 5 tasks, strategy: hybrid, estimated time: 166s
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:44:30,697 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:44:30,697 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:44:30,697 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_quick_95860 with 1 tasks, strategy: sequential, estimated time: 45s
+2025-08-19 13:44:30,697 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_standard_95860 with 3 tasks, strategy: hybrid, estimated time: 104s
+2025-08-19 13:44:30,698 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_comprehensive_95860 with 5 tasks, strategy: hybrid, estimated time: 166s
+2025-08-19 13:44:30,698 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_deep_95860 with 7 tasks, strategy: hybrid, estimated time: 265s
+2025-08-19 13:45:29,674 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:45:29,675 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:45:29,675 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 13:45:29,676 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Research Coordinator initialized
+2025-08-19 13:45:29,676 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_quick_95919 with 1 tasks, strategy: sequential, estimated time: 45s
+2025-08-19 13:45:29,676 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_standard_95919 with 3 tasks, strategy: hybrid, estimated time: 104s
+2025-08-19 13:45:29,676 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_comprehensive_95919 with 5 tasks, strategy: hybrid, estimated time: 166s
+2025-08-19 13:45:29,677 - frameworks.ResearchCoordinator - INFO - [ResearchCoordinator] Created workflow plan: test_deep_95919 with 7 tasks, strategy: hybrid, estimated time: 265s
+2025-08-19 13:54:47,013 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:54:47,014 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 13:56:40,923 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 13:56:40,924 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 13:56:40,924 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 13:56:40,924 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 13:56:40,924 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 13:56:40,924 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:05:04,766 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:05:04,767 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:05:04,767 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:05:04,767 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:05:04,767 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:05:05,215 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:05:26,604 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:05:26,605 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:05:26,847 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:07:53,269 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:07:53,270 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:07:53,492 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:07:53,492 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755637673)
+2025-08-19 14:08:51,030 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:08:51,031 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:08:51,261 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:08:51,261 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755637731)
+2025-08-19 14:09:40,724 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:09:40,726 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:09:40,952 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:09:40,952 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755637780)
+2025-08-19 14:09:41,763 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755637780: Failed to create research crew: CrewAI not installed: cannot import name 'ResponseTextConfig' from 'openai.types.responses.response' (/Users/sarkismanukyan/Desktop/content-writing-agents/venv/lib/python3.12/site-packages/openai/types/responses/response.py)
+2025-08-19 14:11:59,140 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:11:59,142 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:11:59,366 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:11:59,366 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755637919)
+2025-08-19 14:11:59,634 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755637919: Failed to create research crew: CrewAI not installed: cannot import name 'ResponseTextConfig' from 'openai.types.responses.response' (/Users/sarkismanukyan/Desktop/content-writing-agents/venv/lib/python3.12/site-packages/openai/types/responses/response.py)
+2025-08-19 14:11:59,634 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Python programming best practices (ID: research_1755637919)
+2025-08-19 14:11:59,637 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755637919: Failed to create research crew: Failed to create crew Quick Research Crew: 'litellm'
+2025-08-19 14:15:08,869 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:15:08,870 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:15:08,871 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:15:09,125 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:15:09,125 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755638109)
+2025-08-19 14:15:09,545 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-08-19 14:15:10,878 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755638109: Failed to create research crew: Failed to create crew Research Crew: Failed to create agent Web Research Specialist: 2 validation errors for Agent
+tools.0
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=<src.tools.research.web_s...l object at 0x110574950>, input_type=WebSearchTool]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+tools.1
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=<src.tools.research.conte...l object at 0x1105772f0>, input_type=ContentRetrievalTool]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_type
+2025-08-19 14:18:39,434 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:18:39,435 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:18:39,640 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:18:39,641 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755638319)
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool web_search not available for agent Web Research Specialist
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_retrieval not available for agent Web Research Specialist
+2025-08-19 14:18:39,641 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Web Research Specialist
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool trend_analysis not available for agent Trend Analysis Expert
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool news_search not available for agent Trend Analysis Expert
+2025-08-19 14:18:39,641 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Trend Analysis Expert
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_analyzer not available for agent Content Curator
+2025-08-19 14:18:39,641 - frameworks.CrewAI - WARNING - [CrewAI] Tool topic_extractor not available for agent Content Curator
+2025-08-19 14:18:39,642 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Content Curator
+2025-08-19 14:18:39,642 - frameworks.CrewAI - WARNING - [CrewAI] Tool web_search not available for agent Fact Checker
+2025-08-19 14:18:39,642 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_analyzer not available for agent Fact Checker
+2025-08-19 14:18:39,642 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Fact Checker
+2025-08-19 14:18:39,665 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-19 14:18:40,082 - root - INFO - Collection found or created: Collection(name=short_term)
+2025-08-19 14:18:40,097 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-19 14:18:40,104 - root - INFO - Collection found or created: Collection(name=entities)
+2025-08-19 14:18:40,104 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755638319: Failed to create research crew: Failed to create crew Research Crew: 1 validation error for Crew
+  Attribute `manager_llm` or `manager_agent` is required when using hierarchical process. [type=missing_manager_llm_or_manager_agent, input_value={'agents': [Agent(role=We...ax_execution_time': 600}, input_type=dict]
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Web Research Specialist (web_researcher)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Trend Analysis Expert (trend_analyst)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Curator (content_curator)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Fact Checker (fact_checker)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Content Strategist (content_strategist)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Audience Analyst (audience_analyst)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Competitive Analyst (competitive_analyst)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Performance Optimizer (performance_optimizer)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Workflow Coordinator (workflow_coordinator)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI agent: Quality Controller (quality_controller)
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Research Crew
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Strategy Council
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Meta Coordination Crew
+2025-08-19 14:20:24,123 - frameworks.CrewAI - INFO - [CrewAI] Registered CrewAI crew template: Quick Research Crew
+2025-08-19 14:20:24,321 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research Agent initialized with CrewAI framework
+2025-08-19 14:20:24,321 - frameworks.ResearchAgent - INFO - [ResearchAgent] Starting research for topic: Latest AI writing tools and content generation trends 2024 (ID: research_1755638424)
+2025-08-19 14:20:24,321 - frameworks.CrewAI - WARNING - [CrewAI] Tool web_search not available for agent Web Research Specialist
+2025-08-19 14:20:24,321 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_retrieval not available for agent Web Research Specialist
+2025-08-19 14:20:24,322 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Web Research Specialist
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool trend_analysis not available for agent Trend Analysis Expert
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool news_search not available for agent Trend Analysis Expert
+2025-08-19 14:20:24,322 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Trend Analysis Expert
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_analyzer not available for agent Content Curator
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool topic_extractor not available for agent Content Curator
+2025-08-19 14:20:24,322 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Content Curator
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool web_search not available for agent Fact Checker
+2025-08-19 14:20:24,322 - frameworks.CrewAI - WARNING - [CrewAI] Tool content_analyzer not available for agent Fact Checker
+2025-08-19 14:20:24,323 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI agent instance: Fact Checker
+2025-08-19 14:20:24,344 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-19 14:20:24,392 - root - INFO - Collection found or created: Collection(name=short_term)
+2025-08-19 14:20:24,403 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-19 14:20:24,405 - root - INFO - Collection found or created: Collection(name=entities)
+2025-08-19 14:20:24,406 - frameworks.CrewAI - INFO - [CrewAI] Created CrewAI crew instance: Research Crew
+2025-08-19 14:20:25,788 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:26,473 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:26,489 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:31,221 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:31,233 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:32,287 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:32,481 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:36,551 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:36,560 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:37,333 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:37,549 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:37,715 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:38,656 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:39,044 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:41,771 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:42,029 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:42,042 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:46,518 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:46,521 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:46,731 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:46,743 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:49,145 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:49,156 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:49,492 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:49,658 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:49,855 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:50,832 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:51,005 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:51,216 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:51,553 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:51,561 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:53,853 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:53,855 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:54,114 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:54,128 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:20:56,529 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:20:56,533 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:20:59,276 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:59,461 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:20:59,791 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:00,111 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:00,761 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:01,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:01,633 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:03,377 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:04,533 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:04,546 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:21:05,431 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:21:05,435 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:21:05,933 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-19 14:21:05,945 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-3.5-turbo; provider = openai
+2025-08-19 14:21:06,795 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:21:06,799 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-19 14:21:06,814 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research completed successfully: research_1755638424
+2025-08-19 14:21:06,814 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755638424: 'MetricsCollector' object has no attribute 'record_timer'

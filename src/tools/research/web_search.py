@@ -19,8 +19,8 @@ from serpapi import GoogleSearch
 from pydantic import BaseModel, Field
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError, APIError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError, APIError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -340,7 +340,7 @@ class WebSearchTool:
                 raise
         
         # If all searches failed
-        raise ToolExecutionError("All search engines failed. Please check API configurations.")
+        raise ToolError("All search engines failed. Please check API configurations.")
     
     async def bulk_search(self, queries: List[Union[str, SearchQuery]]) -> List[SearchResponse]:
         """

@@ -19,8 +19,8 @@ from praw.models import Submission, Comment, Subreddit
 from pydantic import BaseModel, Field
 
 from ...core.config.loader import get_settings
-from ...core.errors.exceptions import ToolExecutionError, APIError
-from ...utils.retry import with_retry
+from ...core.errors import ToolError, APIError
+from ...utils.simple_retry import with_retry
 
 
 logger = logging.getLogger(__name__)
@@ -478,7 +478,7 @@ class RedditSearchTool:
         """
         try:
             if not self.reddit:
-                raise ToolExecutionError("Reddit API not configured")
+                raise ToolError("Reddit API not configured")
             
             logger.info(f"Analyzing subreddit: {subreddit_name}")
             

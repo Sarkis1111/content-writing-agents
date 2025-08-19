@@ -302,5 +302,43 @@ class MCPServerError(AgenticSystemError):
     pass
 
 
+class MessageHandlingError(AgenticSystemError):
+    """Message handling and routing errors."""
+    
+    def __init__(
+        self,
+        message: str,
+        message_id: Optional[str] = None,
+        message_type: Optional[str] = None,
+        **kwargs
+    ):
+        super().__init__(message, **kwargs)
+        self.message_id = message_id
+        self.message_type = message_type
+        if message_id:
+            self.metadata["message_id"] = message_id
+        if message_type:
+            self.metadata["message_type"] = message_type
+
+
+class CommunicationError(AgenticSystemError):
+    """Communication and connection errors."""
+    
+    def __init__(
+        self,
+        message: str,
+        endpoint: Optional[str] = None,
+        status_code: Optional[int] = None,
+        **kwargs
+    ):
+        super().__init__(message, **kwargs)
+        self.endpoint = endpoint
+        self.status_code = status_code
+        if endpoint:
+            self.metadata["endpoint"] = endpoint
+        if status_code:
+            self.metadata["status_code"] = status_code
+
+
 # Aliases for backward compatibility with tools
 ToolExecutionError = ToolError

@@ -32,9 +32,9 @@ from nltk.stem import PorterStemmer
 from textstat import flesch_reading_ease
 from pydantic import BaseModel, Field, validator
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -1065,7 +1065,7 @@ class SEOAnalyzer:
             
         except Exception as e:
             logger.error(f"SEO analysis failed: {str(e)}")
-            raise ToolExecutionError(f"SEO analysis failed: {str(e)}")
+            raise ToolError(f"SEO analysis failed: {str(e)}")
 
     def _generate_recommendations(self, issues: List[SEOIssue], overall_score: float) -> List[str]:
         """Generate priority recommendations based on issues"""

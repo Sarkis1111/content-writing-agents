@@ -30,9 +30,9 @@ from nltk.corpus import stopwords
 from nltk.tag import pos_tag
 from pydantic import BaseModel, Field, validator
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -829,7 +829,7 @@ class GrammarChecker:
             
         except Exception as e:
             logger.error(f"Grammar check failed: {str(e)}")
-            raise ToolExecutionError(f"Grammar check failed: {str(e)}")
+            raise ToolError(f"Grammar check failed: {str(e)}")
 
     def _deduplicate_errors(self, errors: List[GrammarError]) -> List[GrammarError]:
         """Remove duplicate errors based on position and similarity"""

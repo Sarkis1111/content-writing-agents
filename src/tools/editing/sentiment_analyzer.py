@@ -29,9 +29,9 @@ from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from pydantic import BaseModel, Field, validator
 
-from ...core.errors.exceptions import ToolExecutionError
+from ...core.errors import ToolError
 from ...core.logging.logger import get_logger
-from ...utils.retry import with_retry
+from ...utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -884,7 +884,7 @@ class SentimentAnalyzer:
             
         except Exception as e:
             logger.error(f"Sentiment analysis failed: {str(e)}")
-            raise ToolExecutionError(f"Sentiment analysis failed: {str(e)}")
+            raise ToolError(f"Sentiment analysis failed: {str(e)}")
 
 
 # Initialize tool instance
