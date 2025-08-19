@@ -26,9 +26,18 @@ import random
 from pydantic import BaseModel, Field, validator
 from openai import AsyncOpenAI
 
-from ...core.errors import ToolError
-from ...core.logging.logger import get_logger
-from ...utils.simple_retry import with_retry
+try:
+    from ...core.errors import ToolError
+    from ...core.logging.logger import get_logger
+    from ...utils.simple_retry import with_retry
+except ImportError:
+    # Handle direct import case
+    import sys
+    import os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+    from core.errors import ToolError
+    from core.logging.logger import get_logger
+    from utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
@@ -479,7 +488,7 @@ Format as a simple numbered list, one headline per line."""
         urgency_score = 0
         urgency_words = ['now', 'urgent', 'immediately', 'fast', 'quick', 'limited', 'deadline', 'last chance']
         urgency_score += sum(15 for word in urgency_words if word in headline_lower)
-        if datetime.now().year in headline:
+        if str(datetime.now().year) in headline:
             urgency_score += 10
         urgency_score = min(100, urgency_score)
         

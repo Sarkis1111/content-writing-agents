@@ -6,8 +6,16 @@ from enum import Enum
 from datetime import datetime
 import json
 
-from ...core.logging import get_framework_logger
-from ...core.errors import LangGraphError, ValidationError
+try:
+    from ...core.logging import get_framework_logger
+    from ...core.errors import LangGraphError, ValidationError
+except ImportError:
+    # Handle direct import case
+    import sys
+    import os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+    from core.logging import get_framework_logger
+    from core.errors import LangGraphError, ValidationError
 
 
 class StateStatus(Enum):

@@ -7,15 +7,28 @@ from typing import Callable, Any, Optional, Type, Union, List
 from functools import wraps
 from datetime import datetime, timedelta
 
-from ..core.logging import get_component_logger
-from ..core.errors import (
-    APIError,
-    RateLimitError,
-    TimeoutError,
-    AgenticSystemError,
-    handle_errors
-)
-from ..core.monitoring import get_metrics_collector
+try:
+    from ..core.logging import get_component_logger
+    from ..core.errors import (
+        APIError,
+        RateLimitError,
+        TimeoutError,
+        AgenticSystemError,
+    )
+    from ..core.monitoring import get_metrics_collector
+except ImportError:
+    # Handle direct import case
+    import sys
+    import os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+    from core.logging import get_component_logger
+    from core.errors import (
+        APIError,
+        RateLimitError,
+        TimeoutError,
+        AgenticSystemError,
+    )
+    from core.monitoring import get_metrics_collector
 
 
 class RetryConfig:

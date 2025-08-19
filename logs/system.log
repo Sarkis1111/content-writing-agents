@@ -403,3 +403,7 @@ LiteLLM completion() model= gpt-3.5-turbo; provider = openai
 2025-08-19 14:21:06,799 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
 2025-08-19 14:21:06,814 - frameworks.ResearchAgent - INFO - [ResearchAgent] Research completed successfully: research_1755638424
 2025-08-19 14:21:06,814 - frameworks.ResearchAgent - ERROR - [ResearchAgent] Research failed for research_1755638424: 'MetricsCollector' object has no attribute 'record_timer'
+2025-08-19 15:20:53,920 - sentiment_analyzer - INFO - SentimentAnalyzer initialized
+2025-08-19 15:20:53,923 - sentiment_analyzer - INFO - SentimentAnalyzer initialized
+2025-08-19 15:20:53,924 - sentiment_analyzer - INFO - Starting sentiment analysis for 84 characters
+2025-08-19 15:20:53,961 - sentiment_analyzer - INFO - Sentiment analysis completed: very_positive, confidence: 45.7%

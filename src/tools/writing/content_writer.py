@@ -26,9 +26,18 @@ import openai
 from pydantic import BaseModel, Field, validator
 from openai import AsyncOpenAI
 
-from ...core.errors import ToolError
-from ...core.logging.logger import get_logger
-from ...utils.simple_retry import with_retry
+try:
+    from ...core.errors import ToolError
+    from ...core.logging.logger import get_logger
+    from ...utils.simple_retry import with_retry
+except ImportError:
+    # Handle direct import case
+    import sys
+    import os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+    from core.errors import ToolError
+    from core.logging.logger import get_logger
+    from utils.simple_retry import with_retry
 
 logger = get_logger(__name__)
 
