@@ -32,9 +32,19 @@ from nltk.stem import PorterStemmer
 from textstat import flesch_reading_ease
 from pydantic import BaseModel, Field, validator
 
-from ...core.errors import ToolError
-from ...core.logging.logger import get_logger
-from ...utils.simple_retry import with_retry
+# Use fallback imports
+try:
+    from core.errors import ToolError
+    from core.logging.logger import get_logger
+    from utils.simple_retry import with_retry
+except ImportError:
+    # Fallback implementations
+    class ToolError(Exception): pass
+    import logging
+    def get_logger(name): return logging.getLogger(name)
+    def with_retry(*args, **kwargs):
+        def decorator(func): return func
+        return decorator
 
 logger = get_logger(__name__)
 
